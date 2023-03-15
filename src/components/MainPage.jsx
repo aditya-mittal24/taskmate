@@ -6,7 +6,7 @@ import Sidebar from "./Sidebar";
 function MainPage() {
   return (
     <div className="flex items-center justify-center w-full">
-      <div className="rounded-[10px] h-[460px] w-[670px]">
+      <div className="rounded-[10px] h-[460px] w-[82%]">
         <Navbar />
         <div className="flex justify-between items-between mt-7">
           <Sidebar />

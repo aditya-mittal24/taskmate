@@ -5,7 +5,7 @@ import AddCircleRoundedIcon from '@mui/icons-material/AddCircleRounded';
 function List() {
     const [todoList, setTodoList] = useState([])
   return (
-    <div className="bg-[#ffffff] grid content-between w-[72%] h-[370px] rounded-[10px] ml-4 py-[18px] px-[16px]">
+    <div className="bg-[#ffffff] grid content-between sm:w-[72%] w-[90%] h-[370px] rounded-[10px] ml-4 py-[18px] px-[16px]">
         <div></div>
         <div className='flex w-[100%] relative'>
             <input type="text" className='w-full bg-[#F3F3F3] rounded-[5px] py-[8px] px-[10px]' placeholder='Add todo'/>
