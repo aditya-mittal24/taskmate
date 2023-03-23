@@ -1,73 +1,70 @@
 import React, { useState } from "react";
 import DateRangeIcon from "@mui/icons-material/DateRange";
 import WbSunnyIcon from "@mui/icons-material/WbSunny";
-import NotificationImportantIcon from "@mui/icons-material/NotificationImportant";
-import SettingsIcon from "@mui/icons-material/Settings";
-import MenuIcon from "@mui/icons-material/Menu";
+import { IoIosSettings } from "react-icons/io";
+import { AiOutlineProject } from "react-icons/ai";
+import { MdOutlineNotificationImportant } from "react-icons/md";
 
-function Sidebar() {
-  const [tab, setTab] = useState(1);
-  function handleClick(event) {
-    if (event.target.name === "today") {
-      setTab(1);
-    } else if (event.target.name === "myday") {
-      setTab(2);
-    } else if (event.target.name === "imp") {
-      setTab(3);
-    } else {
-      setTab(4);
-    }
-  }
+function Sidebar(props) {
   return (
-    <div className="grid content-between flex-col">
-      <div className="sm:hidden flex">
-        <MenuIcon className="cursor-pointer"/>
-      </div>
-      <div className="sm:flex flex-col hidden">
+    <div className="grid col-span-1 content-between">
+      <div className="flex flex-col">
         <button
-          onClick={handleClick}
+          onClick={props.handleClick}
           className={
-            tab === 1
-              ? "bg-[#9333EA0F] text-[#9333EA] rounded-md text-[16px] py-2 pl-3 lg:pr-14 pr-4 my-1 text-left"
-              : "text-[#6B7280] border-none rounded-md text-[16px] py-2 pl-3 lg:pr-14 pr-4 my-1 text-left"
+            props.tab === 1
+              ? "bg-[#9333EA0F] text-[#9333EA] rounded-md text-[16px] py-2 pl-3 my-1 text-left"
+              : "text-[#6B7280] border-none rounded-md text-[16px] py-2 pl-3 my-1 text-left"
           }
           name="today"
         >
-          <DateRangeIcon /> Today
+          <WbSunnyIcon /> Today
         </button>
         <button
-          onClick={handleClick}
+          onClick={props.handleClick}
           className={
-            tab === 2
-              ? "bg-[#9333EA0F] text-[#9333EA] rounded-md text-[16px] py-2 pl-3 md:pr-10 pr-4 my-1 text-left"
-              : "text-[#6B7280] border-none rounded-md text-[16px] py-2 pl-3 md:pr-10 pr-4 my-1 text-left"
+            props.tab === 2
+              ? "bg-[#9333EA0F] text-[#9333EA] rounded-md text-[16px] py-2 pl-3 my-1 text-left"
+              : "text-[#6B7280] border-none rounded-md text-[16px] py-2 pl-3 my-1 text-left"
           }
-          name="myday"
+          name="work"
         >
-          <WbSunnyIcon /> My day
+          <DateRangeIcon /> Work
         </button>
         <button
-          onClick={handleClick}
+          onClick={props.handleClick}
           className={
-            tab === 3
-              ? "bg-[#9333EA0F] text-[#9333EA] rounded-md text-[16px] py-2 pl-3 md:pr-10 pr-4 my-1 text-left"
-              : "text-[#6B7280] border-none rounded-md text-[16px] py-2 pl-3 md:pr-10 pr-4 my-1 text-left"
+            props.tab === 3
+              ? "bg-[#9333EA0F] text-[#9333EA] rounded-md text-[16px] py-2 pl-3 my-1 text-left"
+              : "text-[#6B7280] border-none rounded-md text-[16px] py-2 pl-3 my-1 text-left"
           }
-          name="imp"
+          name="project"
         >
-          <NotificationImportantIcon /> Important
+          <AiOutlineProject size={24} className="inline-block" /> Project
+        </button>
+        <button
+          onClick={props.handleClick}
+          className={
+            props.tab === 4
+              ? "bg-[#9333EA0F] text-[#9333EA] rounded-md text-[16px] py-2 pl-3 my-1 text-left"
+              : "text-[#6B7280] border-none rounded-md text-[16px] py-2 pl-3 my-1 text-left"
+          }
+          name="important"
+        >
+          <MdOutlineNotificationImportant size={24} className="inline-block" />{" "}
+          Important
         </button>
       </div>
       <button
-        onClick={handleClick}
+        onClick={props.handleClick}
         className={
-          tab === 4
-            ? "bg-[#9333EA0F] text-[#9333EA] rounded-md text-[16px] py-2 pl-3 md:pr-10 pr-4 my-1 text-left sm:inline hidden"
-            : "text-[#6B7280] border-none rounded-md text-[16px] py-2 pl-3 md:pr-10 pr-4 my-1 text-left self-baseline sm:inline hidden"
+          props.tab === 5
+            ? "bg-[#9333EA0F] text-[#9333EA] rounded-md sm:text-[16px] text-[14px] py-2 pl-3 my-1 text-left"
+            : "text-[#6B7280] border-none rounded-md sm:text-[16px] text-[14px] py-2 pl-3 my-1 text-left"
         }
         name="settings"
       >
-        <SettingsIcon /> Settings
+        <IoIosSettings className="text-[24px] inline-block" /> Settings
       </button>
     </div>
   );

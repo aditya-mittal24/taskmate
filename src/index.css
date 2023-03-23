@@ -6,6 +6,33 @@
 body {
   font-family: 'Roboto', sans-serif;
 }
-input:focus{
-  border:none;
+
+input:focus {
+  border: none;
+  outline: none;
+}
+
+
+input[type="datetime-local"] {
+  width: 30px;
+  height: 30px;
+  padding: 2px !important;
+  margin-top: 1px;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+input[type="datetime-local"]:focus {
+  border: none;
+  outline: none;
+}
+
+input[type="datetime-local"]::-webkit-calendar-picker-indicator {
+  width: 30px;
+  height: 30px;
+}
+
+.capitalize{
+  font-family: 'helvetica neue';
 }
